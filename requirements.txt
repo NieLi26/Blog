@@ -1,0 +1,8 @@
+asgiref==3.5.0
+Django==4.0.3
+django-crispy-forms==1.14.0
+django-tinymce4-lite==1.8.0
+jsmin==3.0.1
+Pillow==9.1.0
+sqlparse==0.4.2
+tzdata==2022.1

@@ -1,0 +1,55 @@
+{% extends 'login/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body mx-3">
+                <div class="row">
+                    <h3 class="card-title mb-5">Crea tu cuenta</h3>
+                    <div class="col-6">
+                        <form action="." method="post">
+                            {% csrf_token %}
+                            <div class="form-group mb-3">
+                                <input type="text" name="username" id="" class="form-control" autofocus
+                                    placeholder="Nombre de usuario">
+                                <small class="text-muted">Requerido. 150 carácteres como máximo. Únicamente letras,
+                                    dígitos y @/./+/-/_ </small>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <input type="password" name="password1" id="" class="form-control"
+                                        placeholder="Contraseña">
+                                </div>
+                                <div class="col-6">
+                                    <input type="password" name="password2" id="" class="form-control"
+                                        placeholder="Confirmación">
+                                </div>
+                            </div>
+                            <small class="text-muted">
+                                <ul>
+                                    <li>Su contraseña no puede asemejarse tanto a su otra información personal.</li>
+                                    <li>Su contraseña debe contener al menos 8 caracteres.</li>
+                                    <li>Su contraseña no puede ser una clave utilizada comúnmente.</li>
+                                    <li>Su contraseña no puede ser completamente numérica.</li>
+                                </ul>
+                            </small>
+                            <div class="row mt-5">
+                                <div class="col-6">
+                                    <a class="text-decoration-none" style="font-size: 15px;" href="{% url 'login' %}">
+                                        <small>¿Ya tienes una cuenta?</small>
+                                    </a>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <button class="btn btn-outline-success">Registrarse</button>
+                                </div>
+                            </div>    
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <img src="{% static 'login/register_logo.png' %}" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
